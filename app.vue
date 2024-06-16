@@ -1,11 +1,19 @@
 <template>
-  <vue-pdf-app style="height: 100vh;" pdf="https://drive.google.com/file/d/1V35ETdOd-fkgzP-v4lxulb_Tk4L7m7vU/view?usp=sharing"></vue-pdf-app>
+  <div style="height: 100vh;">
+    <vue-pdf-app :pdf="pdfPath"></vue-pdf-app>
+  </div>
 </template>
 
-<script>
-import VuePdfApp from "vue3-pdf-app";
-import "vue3-pdf-app/dist/icons/main.css";
+<script setup>
+import { ref } from 'vue';
+import VuePdfApp from 'vue3-pdf-app';
+import 'vue3-pdf-app/dist/icons/main.css';
 
+// Correct path without '/public'
+const pdfPath = ref('/materials006_nuri1.pdf');
+</script>
+
+<script>
 export default {
   components: {
     VuePdfApp
