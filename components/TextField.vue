@@ -11,7 +11,7 @@
 </template>
 
 <script setup lang="ts">
-import { ErrorMessage, Field } from 'vee-validate';
+import { ErrorMessage, Field, configure } from 'vee-validate';
 import { defineProps, withDefaults } from 'vue';
 
 interface Props {
@@ -26,4 +26,8 @@ const props = withDefaults(
     inputType: "text"
   }
 );
+
+configure({
+  validateOnInput: true,
+})
 </script>
